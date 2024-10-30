@@ -34,7 +34,7 @@
         <!-- 工具列容器，用於放置多個工具列 -->
         <ToolBarTray Height="40" DockPanel.Dock="Top">
             <!--1.設定ToolBar的邊距和背景 2.設定高度-->
-            <ToolBar  Margin="0,0,9,0" Background="#FFF9D5C0"
+            <ToolBar  Margin="0,0,9,0" Background="#FFE6DAD4"
                       Height="38">
                 <!--2個label是1.設定顯示文字 2.設定寬度 3.文字顯示方式和字體大小和粗度-->
                 <!--來自 Xceed WPF Toolkit 的一個控件，用於讓用戶選擇顏色。-->
@@ -60,7 +60,7 @@
                         HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" />
             </ToolBar>
 
-            <ToolBar Width="300" Background="#FFB1D5FD">
+            <ToolBar Width="300" Background="#FFCACACA">
                 <!--RadioButton在需要用戶從多個選項中選擇一個-->
                 <!--4個RadioButton都是1.設定寬度和高度 2.設定單擊事件 3.設定Tag屬性-->
                     <!--1.設定Image的寬度和高度 2.設定圖片來源-->
@@ -98,7 +98,7 @@
                 <Label x:Name= "shapeLabel" Content="Ready" 
                        Width="100"/>
             </StatusBarItem>
-            <StatusBarItem>
+            <StatusBarItem Background="#FFD6D6D6">
                 <Label Name="pointLabel" Content="" 
                        Width="150"/>
             </StatusBarItem>
