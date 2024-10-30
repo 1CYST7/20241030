@@ -7,59 +7,100 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="2024 WPF Painter Ver1" Height="650" Width="1000">
+    
     <DockPanel LastChildFill="False">
-        <!-- 菜單 -->
+        <!-- 在窗口頂部放置一個菜單 -->
         <Menu Height="30" DockPanel.Dock="Top">
-            <MenuItem Header="檔案" FontSize="14" Height="28" VerticalAlignment="Center">
-                <MenuItem Header="開新檔案" FontSize="14" Height="28" VerticalAlignment="Center"/>
-                <MenuItem Header="開啟舊檔" FontSize="14" Height="28" VerticalAlignment="Center"/>
-                <MenuItem Header="儲存檔案" FontSize="14" Height="28" VerticalAlignment="Center"/>
-                <MenuItem Header="另存新檔" FontSize="14" Height="28" VerticalAlignment="Center"/>
-                <MenuItem Header="結束" FontSize="14" Height="28" VerticalAlignment="Center"/>
+            <MenuItem Header="檔案" 
+                      Height="28" VerticalAlignment="Center" 
+                      FontSize="14">
+                <MenuItem Header="開新檔案"
+                          VerticalAlignment="Center" Height="28"  
+                          FontSize="14" />
+                <MenuItem Header="開啟舊檔"
+                          VerticalAlignment="Center" Height="28"  
+                          FontSize="14" />
+                <MenuItem Header="儲存檔案"
+                          VerticalAlignment="Center" Height="28" 
+                          FontSize="14" />
+                <MenuItem Header="另存新檔"
+                          VerticalAlignment="Center" Height="28"
+                          FontSize="14"  />
+                <MenuItem Header="結束"
+                          VerticalAlignment="Center" Height="28"  
+                          FontSize="14" />
             </MenuItem>
         </Menu>
-        <!-- 工具欄 -->
+        <!-- 工具列容器，用於放置多個工具列 -->
         <ToolBarTray Height="40" DockPanel.Dock="Top">
-            <ToolBar Height="38" Background="#FFF9D5C0" Margin="0,0,9,0">
-                <!-- 筆刷色彩選擇器 -->
-                <!--Content 屬性用於設置標籤顯示的文本。-->
-                <Label Content="筆刷色彩" Width="65" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <!--1.設定ToolBar的邊距和背景 2.設定高度-->
+            <ToolBar  Margin="0,0,9,0" Background="#FFF9D5C0"
+                      Height="38">
+                <!--2個label是1.設定顯示文字 2.設定寬度 3.文字顯示方式和字體大小和粗度-->
+                <!--來自 Xceed WPF Toolkit 的一個控件，用於讓用戶選擇顏色。-->
+                <Label Content="筆刷色彩" 
+                       Width="65"
+                       VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
                 <xctk:ColorPicker x:Name="strokeColorPicker" Width="130" DisplayColorAndName="True"/>
-                <!-- 填滿色彩選擇器 -->
-                <Label Content="填滿色彩" Width="65" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                
+                <Label Content="填滿色彩" 
+                       Width="65" 
+                       VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
                 <xctk:ColorPicker x:Name="fillColorPicker" Width="130" DisplayColorAndName="True"/>
-                <!-- 筆刷粗細滑桿 -->
-                <Slider x:Name="strokeThicknessSlider" Width="120" VerticalAlignment="Center" Minimum="1" Maximum="10" Value="1" TickFrequency="1" IsSnapToTickEnabled="True" Margin="20,0,0,0" ValueChanged="strokeThicknessSlider_ValueChanged"/>
-                <Label Width="46" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Margin="10,0,0,0" HorizontalContentAlignment="Center" Content="{Binding Value, ElementName=strokeThicknessSlider}"/>
+                <!--1.設定Slider的名字和邊距 2.設定寬度 3.設定文字的顯示位置 4.設定滑桿初始值、移動的最大值和最小值、滑動條的刻度每隔 1 單位將顯示一個刻度標記、是否應該自動對齊到最近的刻度標記"-->
+                <Slider x:Name="strokeThicknessSlider" Margin="20,0,0,0"
+                        Width="120" 
+                        VerticalAlignment="Center" 
+                        Minimum="1" Maximum="10" Value="1" TickFrequency="1" IsSnapToTickEnabled="True"  
+                        ValueChanged="strokeThicknessSlider_ValueChanged"/>
+                <!--1.設定Label的顯示內容和邊距 2.設定寬度 3.設定文字的顯示位置 4.設定字體的粗度和大小、對齊方式-->
+                <Label Content="{Binding Value, ElementName=strokeThicknessSlider}" Margin="10,0,0,0"
+                       Width="46"
+                       VerticalContentAlignment="Center" 
+                        HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" />
             </ToolBar>
+
             <ToolBar Width="300" Background="#FFB1D5FD">
-                <!-- 形狀選擇按鈕 -->
-                <!--RadioButton 控件用於選擇不同的形狀，並顯示相應的圖像。-->
-                <RadioButton Width="38" Height="38" Click="ShapeButton_Click" Tag="line" >
-                    <Image Height="32" Width="32" Source="C:\Users\owner\Desktop\20241030\20241030\20241030\icon\line.png"/>
+                <!--RadioButton在需要用戶從多個選項中選擇一個-->
+                <!--4個RadioButton都是1.設定寬度和高度 2.設定單擊事件 3.設定Tag屬性-->
+                    <!--1.設定Image的寬度和高度 2.設定圖片來源-->
+                <RadioButton 
+                    Width="38" Height="38" 
+                    Click="ShapeButton_Click" Tag="line" >
+                    <Image Height="32" Width="32" 
+                           Source="/line.png"/>
                 </RadioButton>
-                <RadioButton Width="38" Height="38" Click="ShapeButton_Click" Tag="rectangle" >
-                    <Image Height="32" Width="32" Source="C:\Users\owner\Desktop\20241030\20241030\20241030\icon\rectangle.png"/>
+                <RadioButton Width="38" Height="38" 
+                             Click="ShapeButton_Click" Tag="rectangle" >
+                    <Image Height="32" Width="32" 
+                           Source="/rectangle.png"/>
                 </RadioButton>
                 <RadioButton Width="38" Height="38" Click="ShapeButton_Click" Tag="ellipse" >
-                    <Image Height="32" Width="32" Source="C:\Users\owner\Desktop\20241030\20241030\20241030\icon\ellipse.png"/>
+                    <Image Height="32" Width="32" Source="/ellipse.png"/>
                 </RadioButton>
-                <RadioButton Width="38" Height="38" Click="ShapeButton_Click" Tag="polyline" >
-                    <Image Height="32" Width="32" Source="C:\Users\owner\Desktop\20241030\20241030\20241030\icon\polyline.png"/>
+                <RadioButton Width="38" Height="38" 
+                             Click="ShapeButton_Click" Tag="polyline" >
+                    <Image Height="32" Width="32" 
+                           Source="/polyline.png" RenderTransformOrigin="0.529,0.5"/>
                 </RadioButton>
                 <Separator/>
             </ToolBar>
         </ToolBarTray>
-        <!-- 畫布 -->
-        <Canvas x:Name="myCanvas" DockPanel.Dock="Top" Height="500" Background="#FFF7F3DE" MouseEnter="myCanvas_MouseEnter" MouseLeftButtonDown="myCanvas_MouseLeftButtonDown" MouseMove="myCanvas_MouseMove" MouseLeftButtonUp="myCanvas_MouseLeftButtonUp"/>
-        <!-- 狀態欄 -->
+        <!--Canvas其子元素之間提供絕對定位-->
+        <!--1.定義名字和排版方式和背景色 2.設定高度 3.設定滑鼠經過、點擊、停留的動作-->
+        <Canvas x:Name="myCanvas" DockPanel.Dock="Top" Background="#FFF7F3DE"
+                Height="500"  
+                MouseEnter="myCanvas_MouseEnter" MouseLeftButtonDown="myCanvas_MouseLeftButtonDown" MouseMove="myCanvas_MouseMove" MouseLeftButtonUp="myCanvas_MouseLeftButtonUp"/>
+        <!--1.設定StatusBar的高度和排版方式和背景色-->        
         <StatusBar Height="40" DockPanel.Dock="Bottom" Background="LightGray">
-            <!--StatusBarItem 是 StatusBar 控件的子元素，用於顯示狀態欄中的各種信息。-->
+            <!--2個label都是1.設定顯示名稱和名字 2.設定寬度-->
             <StatusBarItem>
-                <Label x:Name= "shapeLabel" Content="Ready" Width="100"/>
+                <Label x:Name= "shapeLabel" Content="Ready" 
+                       Width="100"/>
             </StatusBarItem>
             <StatusBarItem>
-                <Label Name="pointLabel" Content="" Width="150"/>
+                <Label Name="pointLabel" Content="" 
+                       Width="150"/>
             </StatusBarItem>
         </StatusBar>
     </DockPanel>
