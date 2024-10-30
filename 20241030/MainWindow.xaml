@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_20241030"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="painter verl" Height="650" Width="1000">
+    
+    <DockPanel LastChildFill="False">
+        <Menu Height="30" DockPanel.Dock="Top">
+            <MenuItem Header="檔案"
+                      VerticalAlignment="Center" Height="27"
+                      FontSize="14" >
+                <MenuItem Header="開新檔案"
+                      VerticalAlignment="Center" Height="27"
+                      FontSize="14" />
+
+                <MenuItem Header="開啟舊檔"
+                      VerticalAlignment="Center" Height="27"
+                      FontSize="14" />
+
+                <MenuItem Header="儲存檔案"
+                      VerticalAlignment="Center" Height="27"
+                      FontSize="14" />
+
+                <MenuItem Header="另存新檔"
+                      VerticalAlignment="Center" Height="27"
+                      FontSize="14" />
+
+                <MenuItem Header="結束"
+                      VerticalAlignment="Center" Height="27"
+                      FontSize="14" />
+            </MenuItem>
+        </Menu>
+            <ToolBarTray Height="40" DockPanel.Dock="Top">
+                <ToolBar Height="38" Width="300" Background="Pink">
+                    
+
+                </ToolBar>
+            </ToolBarTray>
+            <Canvas DockPanel.Dock="Top" Height="500" Background="Bisque"/>
+        <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray">
+            <StatusBarItem>
+                <Label Content="ready" Width="80"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label Content="x=0,y=0" Width="80"/>
+            </StatusBarItem>
+        </StatusBar>
+
+    </DockPanel>
+
+    
 </Window>
