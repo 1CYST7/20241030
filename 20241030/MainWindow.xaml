@@ -60,7 +60,7 @@
                        HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" />
             </ToolBar>
 
-            <ToolBar Width="300" Background="#FFCACACA">
+            <ToolBar Width="180" Background="#FFCACACA">
                 <!--RadioButton在需要用戶從多個選項中選擇一個-->
                 <!--4個RadioButton都是1.設定寬度和高度 2.設定單擊事件 3.設定Tag屬性-->
                     <!--1.設定Image的寬度和高度 2.設定圖片來源-->
@@ -89,8 +89,10 @@
                            Source="/polyline.png"/>
                 </RadioButton>
             </ToolBar>
+            <!--1.設定ToolBar的背景 2.設定寬度-->
             <ToolBar Background="#FFCECEC7" 
                      Width="100">
+                <!--2個Button都是1.設定寬度和高度 2.設定點擊事件-->
                 <Button x:Name="eraseButton" 
                         Width="38" Height="38" 
                         Click="EraseButton_Click" >
