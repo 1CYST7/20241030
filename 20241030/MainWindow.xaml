@@ -64,26 +64,45 @@
                 <!--RadioButton在需要用戶從多個選項中選擇一個-->
                 <!--4個RadioButton都是1.設定寬度和高度 2.設定單擊事件 3.設定Tag屬性-->
                     <!--1.設定Image的寬度和高度 2.設定圖片來源-->
-                <RadioButton 
-                    Width="38" Height="38" 
-                    Click="ShapeButton_Click" Tag="line" >
+                <RadioButton Width="38" Height="38" 
+                             Click="ShapeRadioButton_Checked" 
+                             Tag="line" >
                     <Image Height="32" Width="32" 
                            Source="/line.png"/>
                 </RadioButton>
                 <RadioButton Width="38" Height="38" 
-                             Click="ShapeButton_Click" Tag="rectangle" >
+                             Click="ShapeRadioButton_Checked" 
+                             Tag="rectangle" >
                     <Image Height="32" Width="32" 
                            Source="/rectangle.png"/>
                 </RadioButton>
-                <RadioButton Width="38" Height="38" Click="ShapeButton_Click" Tag="ellipse" >
-                    <Image Height="32" Width="32" Source="/ellipse.png"/>
+                <RadioButton Width="38" Height="38" 
+                             Click="ShapeRadioButton_Checked" 
+                             Tag="ellipse" >
+                    <Image Height="32" Width="32" 
+                           Source="/ellipse.png"/>
                 </RadioButton>
                 <RadioButton Width="38" Height="38" 
-                             Click="ShapeButton_Click" Tag="polyline" >
+                             Click="ShapeRadioButton_Checked" 
+                             Tag="polyline" >
                     <Image Height="32" Width="32" 
-                           Source="/polyline.png" RenderTransformOrigin="0.529,0.5"/>
+                           Source="/polyline.png"/>
                 </RadioButton>
-                <Separator/>
+            </ToolBar>
+            <ToolBar Background="#FFCECEC7" 
+                     Width="100">
+                <Button x:Name="eraseButton" 
+                        Width="38" Height="38" 
+                        Click="EraseButton_Click" >
+                    <Image Height="35" Width="35" 
+                           Source="/eraser.png"/>
+                </Button>
+                <Button x:Name="clearButton" 
+                        Width="38" Height="38" 
+                        Click="ClearButton_Click" >
+                    <Image Height="35" Width="35" 
+                           Source="/trashcan.png"/>
+                </Button>
             </ToolBar>
         </ToolBarTray>
         <!--Canvas其子元素之間提供絕對定位-->
@@ -93,7 +112,7 @@
                 MouseEnter="myCanvas_MouseEnter" MouseLeftButtonDown="myCanvas_MouseLeftButtonDown" MouseMove="myCanvas_MouseMove" MouseLeftButtonUp="myCanvas_MouseLeftButtonUp"/>
         <!--1.設定StatusBar的高度和排版方式和背景色-->        
         <StatusBar Height="40" DockPanel.Dock="Bottom" Background="LightGray">
-            <!--2個label都是1.設定顯示名稱和名字 2.設定寬度-->
+            <!--3個label都是1.設定顯示名稱和名字 2.設定寬度-->
             <StatusBarItem>
                 <Label x:Name= "shapeLabel" Content="Ready" 
                        Width="100"/>
@@ -101,6 +120,10 @@
             <StatusBarItem Background="#FFD6D6D6">
                 <Label Name="pointLabel" Content="" 
                        Width="150"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label x:Name="statusLabel" 
+                       Width="350"/>
             </StatusBarItem>
         </StatusBar>
     </DockPanel>
