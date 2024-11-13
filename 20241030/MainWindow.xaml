@@ -41,12 +41,12 @@
                 <Label Content="筆刷色彩" 
                        Width="65"
                        VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
-                <xctk:ColorPicker x:Name="strokeColorPicker" Width="130" DisplayColorAndName="True"/>
+                <xctk:ColorPicker x:Name="strokeColorPicker" Width="130" DisplayColorAndName="True" SelectedColorChanged="StrokeColorPicker_SelectedColorChanged"/>
                 
                 <Label Content="填滿色彩" 
                        Width="65" 
                        VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
-                <xctk:ColorPicker x:Name="fillColorPicker" Width="130" DisplayColorAndName="True"/>
+                <xctk:ColorPicker x:Name="fillColorPicker" Width="130" DisplayColorAndName="True" SelectedColorChanged="FillColorPicker_SelectedColorChanged"/>
                 <!--1.設定Slider的名字和邊距 2.設定寬度 3.設定文字的顯示位置 4.設定滑桿初始值、移動的最大值和最小值、滑動條的刻度每隔 1 單位將顯示一個刻度標記、是否應該自動對齊到最近的刻度標記"-->
                 <Slider x:Name="strokeThicknessSlider" Margin="20,0,0,0"
                         Width="120" 
@@ -57,7 +57,7 @@
                 <Label Content="{Binding Value, ElementName=strokeThicknessSlider}" Margin="10,0,0,0"
                        Width="46"
                        VerticalContentAlignment="Center" 
-                        HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" />
+                       HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" />
             </ToolBar>
 
             <ToolBar Width="300" Background="#FFCACACA">
