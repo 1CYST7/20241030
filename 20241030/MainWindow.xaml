@@ -14,20 +14,8 @@
             <MenuItem Header="檔案" 
                       Height="28" VerticalAlignment="Center" 
                       FontSize="14">
-                <MenuItem Header="開新檔案"
-                          VerticalAlignment="Center" Height="28"  
-                          FontSize="14" />
-                <MenuItem Header="開啟舊檔"
-                          VerticalAlignment="Center" Height="28"  
-                          FontSize="14" />
                 <MenuItem Header="儲存檔案"
                           VerticalAlignment="Center" Height="28" 
-                          FontSize="14" />
-                <MenuItem Header="另存新檔"
-                          VerticalAlignment="Center" Height="28"
-                          FontSize="14"  />
-                <MenuItem Header="結束"
-                          VerticalAlignment="Center" Height="28"  
                           FontSize="14" />
             </MenuItem>
         </Menu>
